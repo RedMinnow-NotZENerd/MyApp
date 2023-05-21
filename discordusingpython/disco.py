@@ -15,7 +15,7 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 
 # Database file path
-DATABASE_PATH = 'C:\\Users\\Sahil\\Downloads\\database.xlsx'
+DATABASE_PATH = 'database.xlsx'
 
 def load_users():
     workbook = openpyxl.load_workbook(DATABASE_PATH)
