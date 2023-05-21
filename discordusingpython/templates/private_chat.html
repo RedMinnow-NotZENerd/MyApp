@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Private Chat</h1>
+    <h2>Send Message</h2>
+    <form action="{{ url_for('send_message') }}" method="POST">
+        <select name="recipient_username">
+            {% for user in users %}
+                <option value="{{ user }}">{{ user }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <textarea name="message_text" rows="4" cols="50" placeholder="Enter your message..."></textarea>
+        <br><br>
+        <input type="submit" value="Send">
+    </form>
+    <br>
+    <a href="{{ url_for('index') }}">Go to Index</a>
+    <br>
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+
+  
+{% endblock %}
+
+

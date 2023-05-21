@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Received Messages</title>
+</head>
+<body>
+  <h1>Received Messages</h1>
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+        <li>
+          <strong>Sender: </strong>{{ message.sender }}
+          <br>
+          <strong>Message: </strong>{{ message.text }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No messages received.</p>
+  {% endif %}
+</body>
+</html>

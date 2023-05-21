@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Received Messages</h1>
+  
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="alert alert-danger">
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  {% endwith %}
+  
+  {% if messages %}
+    <ul>
+      {% for sender, message in messages %}
+        <li>From: {{ sender }}</li>
+        <li>Message: {{ message }}</li>
+        <br>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No messages received.</p>
+  {% endif %}
+{% endblock %}
+
